@@ -30,4 +30,13 @@ export class EmployeeListComponent implements OnInit {
     // this.employeeService
     this.router.navigate(['update-employee', id])
   }
+
+  deleteEmployee(id: number){
+    // 一覧画面から削除するために、serviceクラスのdeleteEmployeeメソッドを実行する
+    this.employeeService.deleteEmployee(id).subscribe( data => {
+      console.log(data);
+      this.getEmployees();
+    })
+  }
+
 }
