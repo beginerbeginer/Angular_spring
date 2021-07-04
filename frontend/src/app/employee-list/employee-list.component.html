@@ -1,18 +1,24 @@
-<h2> 従業員 一覧 </h2>
+<div class="col-md-6 offset-md-3">
+  <h2> 従業員 一覧 </h2>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>氏</th>
-      <th>名</th>
-      <th>メールアドレス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor = "let employee of employees">
-      <td> {{employee.firstName}} </td>
-      <td> {{employee.lastName}} </td>
-      <td> {{employee.emailId}} </td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>氏</th>
+        <th>名</th>
+        <th>メールアドレス</th>
+        <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let employee of employees">
+        <td> {{employee.firstName}} </td>
+        <td> {{employee.lastName}} </td>
+        <td> {{employee.emailId}} </td>
+        <td>
+          <button (click) = "updateEmployee(employee.id)" class = "btn btn-info">更新</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
