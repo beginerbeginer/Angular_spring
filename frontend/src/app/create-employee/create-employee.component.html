@@ -1,25 +1,27 @@
-<div class="col-md-8 offset-md-3"></div>
-<h3> 従業員作成</h3>
+<div class="col-md-8 offset-md-3">
+  <h2> 従業員作成</h2>
 
-<form (ngSubmit) = "onSubmit()">
+  <hr/>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label> 氏 </label>
+      <input type="text" class = "form-control" id = "firstName"
+        [(ngModel)]="employee.firstName" name = firstName>
+    </div>
 
-  <div class="form-group">
-    <label> 氏 </label>
-    <input type="text" class = "form-control" id = "firstName"
-      [(ngModel)]="employee.firstName" name = firstName>
-  </div>
+    <div class="form-group">
+      <label> 名 </label>
+      <input type="text" class = "form-control" id = "lasttName"
+        [(ngModel)]="employee.lastName" name = lastName>
+    </div>
 
-  <div class="form-group">
-    <label> 名 </label>
-    <input type="text" class = "form-control" id = "lasttName"
-      [(ngModel)]="employee.lastName" name = lastName>
-  </div>
+    <div class="form-group">
+      <label> メールアドレス </label>
+      <input type="text" class="form-control" id="emailId"
+        [(ngModel)]="employee.emailId" name = emailId>
+    </div>
 
-  <div class="form-group">
-    <label> メールアドレス </label>
-    <input type="text" class="form-control" id="emailId"
-      [(ngModel)]="employee.emailId" name = emailId>
-  </div>
-
-  <button class = "btn btn-primary" type="submit">送信</button>
-</form>
+    <br>
+    <button class = "btn btn-primary" type="submit">送信</button>
+  </form>
+</div>
