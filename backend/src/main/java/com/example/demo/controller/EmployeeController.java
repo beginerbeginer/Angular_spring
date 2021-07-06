@@ -43,7 +43,7 @@ public class EmployeeController {
 	}
 
 	@Operation(summary = "従業員の詳細を取得します")
-	@PostMapping("/employee/{id}")
+	@GetMapping("/employee/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
 		Employee employee = employeeRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("従業員が見つかりません id: " + id));
