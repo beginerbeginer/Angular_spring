@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin
+@CrossOrigin("*")
 public class EmployeeController {
 
 	@Autowired
@@ -57,8 +57,8 @@ public class EmployeeController {
 				.orElseThrow(() -> new ResourceNotFoundException("従業員が見つかりません id: " + id));
 
 		employee.setFirstName(employeeDetails.getFirstName());
-		employee.setFirstName(employeeDetails.getLastName());
-		employee.setFirstName(employeeDetails.getEmailId());
+		employee.setLastName(employeeDetails.getLastName());
+		employee.setEmailId(employeeDetails.getEmailId());
 
 		Employee updateEmployee = employeeRepository.save(employee);
 		return ResponseEntity.ok(updateEmployee);
